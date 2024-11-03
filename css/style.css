@@ -1,0 +1,277 @@
+ /* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+
+  .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: black;
+      color: #fff;
+      transition: width 0.5s ease-in-out;
+      z-index: 100;
+  }
+
+  .logo,
+  .menu-icon {
+      padding: 20px;
+  }
+
+  .menu-icon {
+      cursor: pointer;
+
+  }
+
+  .nav-menu {
+      margin-top: 20px;
+  }
+
+  .nav-menu ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  
+
+  .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 5px;
+  }
+
+  .sidebar.closed {
+      width: 60px;
+  }
+
+  .sidebar.closed .nav-menu {
+      display: none;
+  }
+
+  .sidebar.closed {
+      background-color: white;
+
+  }
+  .sidebar.closed i{
+      color:black;
+
+  }
+
+  .copyrights {
+      position: absolute;
+      bottom: 5px;
+      left: 20px;
+  }
+
+  .copyrights p {
+      color :white !important;
+  }
+  .socialicons{
+    display: flex;
+  }
+ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    width: 60px;
+    height: 60px;
+    animation: spin 10s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(30deg);
+    }
+
+    50% {
+        transform: rotate(60deg);
+    }
+
+    75% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+#search-bar {
+    width: 300px;
+    padding: 8px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+#movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.movie {
+    margin: 15px;
+    width: 200px;
+    color: #fff;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 99;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.open-btn {
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: white;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+}
+
+.form {
+    position: relative;
+    left: 170px;
+}
+
+.form-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 25px;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-btn:hover {
+    color: #000 !important;
+    background-color: #F8F6F6;
+}
+
+.showPass {
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    bottom: -20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.movie-item {
+    position: relative;
+    width: 200px;
+    margin: 10px;
+}
+
+.movie-item img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+    <!-- =============== sidebar section =================-->
+<!-- <div class="sidebar">  
+
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+    <div class="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#">Now playing</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Top Rated</a></li>
+            <li><a href="#">Trending</a></li>
+            <li><a href="#">Upcoming</a></li>
+            <li><a href="#">Contact Us</a></li>
+            
+
+        </ul>
+
+        <div class="copyrights">
+            <div class="socialicons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-solid fa-globe"></i></a>
+            </div>
+            <p class="pt-3">Copyright © 2022 All Rights Reserved. <br>Created by <a href="https://github.com/Develekko"
+                    class="link-danger fw-bold" target="_blank">Housam Ramadan</a></p>
+        </div>
+    </nav>
+</div>  
+ -->
+<div>
+        <header>
+            <input class="w-75 rounded-5" type="text" id="search-bar" placeholder="Search">
+        </header>
+        <button onclick="openSidebar()" class="open-btn text-black "><span >☰</span></button>
+
+        <div id="sidebar" class="sidebar text-white">
+            <a href="#" class="close-btn" onclick="closeSidebar()">×</a>
+            <a href="#" onclick="fetchMoviesByGenre('action')">new playing</a>
+            <a href="#" onclick="fetchMoviesByGenre('comedy')">Popular</a>
+            <a href="#" onclick="fetchMoviesByGenre('action')">Top Rated</a>
+            <a href="#" onclick="fetchMoviesByGenre('drama')">Upcoming</a>
+            <a href="#contact-form">Contact Us</a>
+            <div class="min-section">
+                <div class="icons mt-2">
+                    <span class="p-2"><i class="fa-brands fa-facebook-f"></i></span>
+                    <span class="p-2"><i class="fa-brands fa-twitter"></i></span>
+                    <span class="p-2"><i class="fa-solid fa-globe"></i></span>
+                </div>
+                <div class="text ">
+                    <p>Copyright © 2022 All Rights Reserved. <br>Created by<span class="text-danger p-1">Housam Ramadan</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" id="movie-container">
+            </div>
+        </div>
+        <div class=" form w-75 ">
+            <form id="contact-form">
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <input type="text" maxlength="37" class="form-control mt-4" placeholder="Enter Your Name">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control mt-4" placeholder="Enter Your Email">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control mt-4" placeholder="Enter Your Phone">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control mt-4" placeholder="Enter Your Age">
+                    </div>
+                    <div class="col-md-6 position-relative">
+                        <input type="password" class="form-control mt-4" placeholder="Enter Your Password">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" class="form-control mt-4" placeholder="ReEnter Password">
+                    </div>
+                    <div class="col-md-12  mt-4">
+                        <button type="submit" class="form-btn rounded-2 mb-3 animate__animated">Submit</button>
+                    </div>
+            </form>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
